@@ -14,3 +14,14 @@ public class Array_Sort_Zero_and_one {
         }
     }
 }
+//Output
+//The Sorted Array is
+//0
+//0
+//0
+//0
+//1
+//1
+//1
+//1
+//1
