@@ -1,23 +1,23 @@
 package com.ashish.mycalculator;
 import java.util.*;
 public class Union_of_two_Arrays {
-    public static int Union(int a[],int b[])
+    public static int Union(int arr[],int brr[])
     {
-        Set<Integer> set = new HashSet<>();
-        for (int x : a)
+        Set<Integer> sc = new HashSet<>();
+        for (int element : arr)
         {
-            set.add(x);
+            sc.add(element);
         }
-        for (int x : b)
+        for (int element : brr)
         {
-            set.add(x);
+            sc.add(element);
         }
-        return set.size();
+        return sc.size();
     }
     public static void main(String[] args)
     {
-        int a[] = {5,10,15,5};
-        int b[] = {10,15,5};
-        System.out.println(Union(a,b));
+        int arr[] = {5,10,15,5};
+        int brr[] = {10,15,4,5};
+        System.out.println("Union of Array "+Union(arr,brr));
     }
 }

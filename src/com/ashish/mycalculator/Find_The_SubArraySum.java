@@ -1,41 +1,44 @@
 package com.ashish.mycalculator;
 import java.util.*;
+import java.util.Set;
 public class Find_The_SubArraySum {
-    public static void subArray(int[] a, int sum)
+    public static void SubArray(int arr[],int sum)
     {
-        int currsum = 0;
+        int Currsum = 0;
         int start = 0;
         int end = -1;
 
-        HashMap<Integer,Integer> map = new HashMap<>();
-        for (int i = 0; i < a.length; i++)
+        HashMap<Integer,Integer> sc = new HashMap<>();
+        for(int i = 0; i < arr.length; i++)
         {
-            currsum += a[i];
-            if (currsum - sum == 0)
+            Currsum += arr[i];
+            if (Currsum == sum)
             {
                 start = 0;
-                end = 1;
-                break;
-            }
-            if(map.containsKey(currsum - sum))
-            {
-                start = map.get(currsum - sum) + 1;
                 end = i;
                 break;
             }
-            map.put(currsum,i);
+            if (sc.containsKey(Currsum - sum))
+            {
+                start = sc.get(Currsum - sum)+1;
+                end = i;
+                break;
+            }
+            sc.put(Currsum,i);
         }
         if (end == -1)
         {
-            System.out.println("Not Found");
+            System.out.println("Element are not found");
         }
         else
         {
-            System.out.println(start +" "+end);
+            System.out.println(start+" "+end);
+
         }
     }
-    public static void main(String[] args) {
-        int[] a = {10,15,-5,15,-10,5};
-        subArray(a,20);
+    public static void main(String[] args)
+    {
+        int arr[] = {10,15,-5,15,-10,5};
+        SubArray(arr,20);
     }
 }

@@ -1,59 +1,54 @@
 package com.ashish.mycalculator;
-import java.util.Scanner;
+import java.util.*;
 public class Search_and_Rotated_Sorted_Array {
-    public static int Pivot(int arr[],int n)
+    public static int BinarySearch(int arr[],int key)
     {
         int start = 0;
-        int end = n - 1;
-        while(start < end)
-        {
-            int mid = start + (end - start)/2;
-            if(arr[mid] > arr[0])
-            {
-                start = mid + 1;
-            }
-            else
-            {
-                end = mid;
-            }
-            mid = start + (end - start)/2;
-        }
-        return start;
-    }
-    public static int Binary_Search(int arr[],int s,int e,int key)
-    {
-        int start = s;
-        int end = e;
+        int end = arr.length - 1;
+
         while (start <= end)
         {
             int mid = start + (end - start)/2;
-            if (key > arr[mid])
+            if (arr[mid] == key)
             {
-                start = mid + 1;
+                return mid;
+            }
+            if (arr[start] < arr[mid])
+            {
+                if (key >= arr[start] && key < arr[mid])
+                {
+                    start = mid - 1;
+                }
+                else
+                {
+                    end = mid + 1;
+                }
             }
             else
             {
-                end = mid - 1;
+                if (key > arr[mid] && key <= arr[end])
+                {
+                    start = mid + 1;
+                }
+                else
+                {
+                    end = mid - 1;
+                }
             }
-            mid = start + (end - start)/2;
         }
-        return start;
+        return -1;
     }
-    public static int find_Position(int arr[],int n,int key)
+    public static void main(String[] args)
     {
-        int pivot = Pivot(arr,5);
-        if (key >= arr[pivot] && key <= arr[n-1])
+        int arr[] = {4,5,6,7,0,1,2};
+        int index = BinarySearch(arr,3);
+        if (index != -1)
         {
-            return Binary_Search(arr,pivot,n-1,key);
+            System.out.println("Element Are Present in Array at Index "+index);
         }
         else
         {
-            return Binary_Search(arr,0,pivot - 1,key);
+            System.out.println("Element Are Not Found");
         }
-    }
-    public static void main(String [] args)
-    {
-        int arr[] = {12,15,18,2,4};
-        System.out.println("The Search and Rotated Number "+find_Position(arr,5,18));
     }
 }

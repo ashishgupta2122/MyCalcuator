@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Swap_Array {
     public static void main(String[] args)
     {
-        int arr[] = {2,1,9,3,10,15};
+        int arr[] = {12,10,9,45,2,10,10,45};
         int n = arr.length;
         System.out.println("Swapping Array");
         //Here,i+=2 means incerment of one index
