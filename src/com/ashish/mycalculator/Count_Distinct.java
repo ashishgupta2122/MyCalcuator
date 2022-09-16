@@ -1,18 +1,18 @@
 package com.ashish.mycalculator;
 import java.util.*;
 public class Count_Distinct {
-    public static int count(int arr[])
+    public static int Count(int arr[])
     {
-        Set<Integer>set = new HashSet<>();
-        for (int element:arr)
+        Set<Integer> sc = new HashSet<>();
+        for (int element : arr)
         {
-            set.add(element);
+            sc.add(element);
         }
-        return set.size();
+        return sc.size();
     }
     public static void main(String[] args)
     {
-        int arr[] = {5,10,15,5,4,5};
-        System.out.println(count(arr));
+        int arr[] = {5,10,4,15,5,4};
+        System.out.println(Count(arr));
     }
 }

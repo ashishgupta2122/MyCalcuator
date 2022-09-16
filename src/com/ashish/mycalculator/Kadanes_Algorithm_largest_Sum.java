@@ -21,7 +21,7 @@ public class Kadanes_Algorithm_largest_Sum {
     }
     public static void main(String[] args)
     {
-        int arr[] = {5,-4,-2,6,-1};
+        int arr[] = {1,2,3,-2,5};
         System.out.println(maxSumSubArray(arr));
     }
 }

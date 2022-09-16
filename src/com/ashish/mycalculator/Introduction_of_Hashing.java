@@ -3,12 +3,14 @@ import java.util.*;
 public class Introduction_of_Hashing {
     public static void main(String[] args)
     {
-        HashSet<Integer> sc = new HashSet<>();
-        sc.add(10);
-        sc.add(20);
-        sc.add(45);
-        System.out.print(sc);
-        if (sc.contains(10))
+        HashSet<Integer> s = new HashSet<>();
+        s.add(12);
+        s.add(13);
+        s.add(14);
+        s.add(15);
+        s.add(16);
+        System.out.println(s);
+        if (s.contains(12))
         {
             System.out.println("Present");
         }
@@ -16,9 +18,9 @@ public class Introduction_of_Hashing {
         {
             System.out.println("Not Present");
         }
-        sc.remove(10);
-        System.out.println(sc.isEmpty());
-        System.out.println(sc.size());
-        sc.clear();
+        s.remove(12);
+        System.out.println(s.isEmpty());
+        System.out.println(s.size());
+        s.clear();
     }
 }
